@@ -9,8 +9,9 @@
   apt:
     name: libxcb-xtest0
 
-- name: Extract File Deb Zoom
-  command: dpkg -i /tmp/zoom_amd64.deb
-
 - name: Install Zoom
-  command: apt-get -f install
+  apt:
+    deb={{ item }}
+  with_items:
+    - /tmp/zoom_amd64.deb
+  sudo: yes
