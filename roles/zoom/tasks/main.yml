@@ -1,6 +1,7 @@
 ---
 
 - name: Get Zoom Deb
+  become: yes
   get_url:
     url: https://zoom.us/client/latest/zoom_amd64.deb
     dest: /tmp/zoom_amd64.deb
@@ -11,7 +12,7 @@
 
 - name: Install Zoom
   apt:
-    deb={{ item }}
+    deb: {{ item }}
   with_items:
     - /tmp/zoom_amd64.deb
   sudo: yes
