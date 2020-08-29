@@ -6,6 +6,7 @@ docker:
   default_container_image: peaceiris/mdbook
   default_container_command: sleep 1d
   DOCKER_PACKAGES:
+    - python-pip
     - apt-transport-https
     - ca-certificates
     - curl
