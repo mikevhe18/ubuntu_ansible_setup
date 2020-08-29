@@ -9,6 +9,7 @@
 - name: Install prerequisition library for Zoom
   apt:
     name: libxcb-xtest0
+    force_apt_get: "yes"
 
 - name: Install Zoom
   apt:
