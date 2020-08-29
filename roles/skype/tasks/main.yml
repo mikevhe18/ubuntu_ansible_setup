@@ -7,8 +7,8 @@
 - name: Get Skype
   apt_repository:
     repo: deb [arch=amd64] https://repo.skype.com/deb stable main
-    filename: skype-deb
+    filename: skypeforlinux
 
 - name: Install Skype
   apt:
-    name: skype-deb
+    name: skypeforlinux
