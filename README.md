@@ -1,5 +1,3 @@
-# ubuntu_ansible_setup
-
 ## Installation
 Ansible :
 ```
@@ -10,4 +8,5 @@ sudo apt-get install ansible
 sudo apt-get install git
 ```
 For more information [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu)
+
 Run `ansible-playbook main.yml --ask-become-pass` and enter your sudo password to run the playbook
