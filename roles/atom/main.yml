@@ -1,0 +1,15 @@
+---
+- name: Atom GPG Key
+  apt_key:
+    url: 'https://packagecloud.io/AtomEditor/atom/gpgkey'
+
+- name: Get Atom
+  become: yes
+  apt_repository:
+    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+    filename: atom
+    state: present
+
+- name: Install Atom
+  apt:
+    name: atom

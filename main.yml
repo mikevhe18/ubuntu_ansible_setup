@@ -1,0 +1,8 @@
+---
+
+- name: Playbook for library,tools, and application needed
+  hosts: localhost
+  become: true
+  roles:
+    - skype
+    - atom
