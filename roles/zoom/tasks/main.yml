@@ -1,0 +1,16 @@
+---
+
+- name: Get Zoom Deb
+  get_url:
+    url: https://zoom.us/client/latest/zoom_amd64.deb
+    dest: /tmp/zoom_amd64.deb
+
+- name: Install prerequisition library for Zoom
+  apt:
+    name: libxcb-xtest0
+
+- name: Extract File Deb Zoom
+  command: dpkg -i /tmp/zoom_amd64.deb
+
+- name: Install Zoom
+  command: apt-get -f install

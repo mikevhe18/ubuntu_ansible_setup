@@ -7,5 +7,7 @@
     state: present
 
 - name: Install SimpleScreenRecorder
-  apt: name=simplescreenrecorder state=latest
+  apt:
+      name: simplescreenrecorder
+      state: latest
   when: ansible_distribution == 'Ubuntu'
