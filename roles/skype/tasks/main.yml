@@ -11,4 +11,4 @@
 
 - name: Install Skype
   apt:
-    name: skype
+    name: skype-deb
