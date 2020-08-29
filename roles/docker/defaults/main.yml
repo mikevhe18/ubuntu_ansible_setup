@@ -5,3 +5,9 @@ docker:
   default_container_name: mdbook
   default_container_image: peaceiris/mdbook
   default_container_command: sleep 1d
+  DOCKER_PACKAGES:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg-agent
+    - software-properties-common
