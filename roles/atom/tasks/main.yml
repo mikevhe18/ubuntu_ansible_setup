@@ -13,4 +13,3 @@
 - name: Install Atom
   apt:
     name: atom
-  sudo: yes
