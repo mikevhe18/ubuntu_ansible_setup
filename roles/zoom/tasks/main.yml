@@ -13,4 +13,3 @@
 - name: Install Zoom
   apt:
     deb: /tmp/zoom_amd64.deb
-  sudo: yes
