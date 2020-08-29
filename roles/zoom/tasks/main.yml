@@ -12,7 +12,5 @@
 
 - name: Install Zoom
   apt:
-    deb: {{ item }}
-  with_items:
-    - /tmp/zoom_amd64.deb
+    deb: /tmp/zoom_amd64.deb
   sudo: yes
