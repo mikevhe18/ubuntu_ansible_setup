@@ -1,0 +1,11 @@
+---
+
+- name: Adding Repo Simple Screen Recorder
+  apt_repository:
+    validate_certs: no
+    repo: 'ppa:maarten-baert/simplescreenrecorder'
+    state: present
+
+- name: Install SimpleScreenRecorder
+  apt: name=simplescreenrecorder state=latest
+  when: ansible_distribution == 'Ubuntu'

@@ -1,8 +1,10 @@
 ---
 
 - name: Playbook for library,tools, and application needed
-  hosts: localhost
+  hosts: 127.0.0.1
+  connection: local
   become: true
   roles:
     - skype
     - atom
+    - simplescreenrecorder
