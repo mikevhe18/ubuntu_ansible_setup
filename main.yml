@@ -5,6 +5,7 @@
   connection: local
   become: true
   roles:
+    - docker
     - skype
     - atom
     - simplescreenrecorder

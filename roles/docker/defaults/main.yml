@@ -1,0 +1,7 @@
+---
+
+docker:
+  create_containers: 4
+  default_container_name: mdbook
+  default_container_image: peaceiris/mdbook
+  default_container_command: sleep 1d
