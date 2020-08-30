@@ -3,7 +3,7 @@
 docker:
   create_containers: 1
   default_container_name: mdbook
-  default_container_image: peaceiris/mdbook
+  default_container_image: hrektts/mdbook
   default_container_command: sleep 1d
   DOCKER_PACKAGES:
     - python-pip
