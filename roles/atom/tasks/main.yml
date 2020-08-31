@@ -6,7 +6,7 @@
 - name: Get Atom
   become: yes
   apt_repository:
-    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main owner=root group=root mode=644
     filename: atom
     state: present
 

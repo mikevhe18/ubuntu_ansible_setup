@@ -3,7 +3,7 @@
 - name: Get Zoom Deb
   become: yes
   get_url:
-    url: https://zoom.us/client/latest/zoom_amd64.deb owner=root group=root mode=644
+    url: https://zoom.us/client/latest/zoom_amd64.deb
     dest: /tmp/zoom_amd64.deb
 
 - name: Install prerequisition library for Zoom
