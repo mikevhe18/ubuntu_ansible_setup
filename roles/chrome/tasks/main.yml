@@ -1,11 +1,22 @@
 ---
 
-- name: Get Chrome Deb
-  become: yes
-  get_url:
-    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    dest: /tmp/google-chrome-stable_current_amd64.deb
+- name: Add Google Chrome Key
+  apt_key:
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
 
-- name: Install Chrome
+- name: Get Chrome Deb
+  apt_repository:
+    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main owner=root group=root mode=644
+    state: present
+
+- name: Update apt after adding Google Chrome
   apt:
-    deb: /tmp/google-chrome-stable_current_amd64.deb
+    update_cache: yes
+    force_apt_get: yes
+    cache_valid_time: 3600
+
+- name: Install Google Chrome
+  apt:
+    name: google-chrome-stable
+    state: latest
