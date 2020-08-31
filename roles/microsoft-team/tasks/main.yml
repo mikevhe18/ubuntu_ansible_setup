@@ -8,9 +8,6 @@
 - name: Add Microsoft Team Repository
   apt_repository:
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main
-      owner: root
-      group: root
-      mode: 644
     state: present
 
 - name: Update apt after adding Microsoft Team
