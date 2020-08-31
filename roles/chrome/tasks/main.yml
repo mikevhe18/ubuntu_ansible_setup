@@ -3,7 +3,7 @@
 - name: Get Chrome Deb
   become: yes
   get_url:
-    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb owner=root group=root mode=644
     dest: /tmp/google-chrome-stable_current_amd64.deb
 
 - name: Install Chrome
