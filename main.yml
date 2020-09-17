@@ -4,14 +4,8 @@
   hosts: localhost
   connection: local
   become: true
-  tasks:
-      - name: Set /tmp folder permissions
-        file:
-          path: /tmp
-          owner: root
-          group: root
-          mode: 0777
   roles:
+    - tmp_security
     - docker
     - skype
     - atom
