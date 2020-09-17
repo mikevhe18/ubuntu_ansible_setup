@@ -12,7 +12,9 @@
 
 - name: Add Docker Repository
   apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu bionic stable owner=root group=root mode=644
+    repo: 'deb https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable'
+    validate_certs: true
+    update_cache: true
     state: present
 
 - name: Update apt and install docker-ce
