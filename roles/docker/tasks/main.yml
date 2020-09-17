@@ -14,6 +14,7 @@
   apt_repository:
     repo: 'deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable'
     validate_certs: true
+    update_cache: no
     state: present
 
 - name: Update apt and install docker-ce
