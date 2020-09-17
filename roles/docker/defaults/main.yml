@@ -9,6 +9,6 @@ docker:
     - apt-transport-https
     - ca-certificates
     - curl
-    - python-pip
+    - python3-pip
     - gnupg-agent
     - software-properties-common
