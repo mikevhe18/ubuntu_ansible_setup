@@ -8,13 +8,9 @@
 - name: Add Microsoft Team Repository
   apt_repository:
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main owner=root group=root mode=644
+    validate_certs: true
+    update_cache: no
     state: present
-
-- name: Update apt after adding Microsoft Team
-  apt:
-    update_cache: yes
-    force_apt_get: yes
-    cache_valid_time: 3600
 
 - name: Install Microsoft Team
   apt:

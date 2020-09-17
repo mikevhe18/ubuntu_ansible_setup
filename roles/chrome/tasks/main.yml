@@ -8,13 +8,9 @@
 - name: Get Chrome Deb
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main owner=root group=root mode=644
+    validate_certs: true
+    update_cache: no
     state: present
-
-- name: Update apt after adding Google Chrome
-  apt:
-    update_cache: yes
-    force_apt_get: yes
-    cache_valid_time: 3600
 
 - name: Install Google Chrome
   apt:

@@ -1,4 +1,6 @@
 ---
 
 - name: Install Shutter
-  apt: name=shutter state=present
+  apt:
+    name: shutter
+    state: present

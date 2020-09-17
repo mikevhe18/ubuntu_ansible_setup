@@ -4,6 +4,7 @@
   apt_repository:
     validate_certs: no
     repo: 'ppa:maarten-baert/simplescreenrecorder'
+    update_cache: no
     state: present
 
 - name: Install SimpleScreenRecorder
