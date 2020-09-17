@@ -1,6 +1,13 @@
 ---
+- name: Adding Repo Shutter
+  apt_repository:
+    validate_certs: no
+    repo: 'ppa:linuxuprising/shutter'
+    update_cache: no
+    state: present
 
 - name: Install Shutter
   apt:
-    name: shutter
-    state: present
+      name: shutter
+      state: latest
+  when: ansible_distribution == 'Ubuntu'
