@@ -37,7 +37,6 @@ docker__package_dependencies:
   - "ca-certificates"
   - "cron"
   - "gnupg2"
-  - "python3-pip"
   - "software-properties-common"
 
 docker__architecture_map:
