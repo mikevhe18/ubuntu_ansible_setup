@@ -6,7 +6,7 @@
   become: true
   roles:
     - tmp_security
-    - docker
+    - docker-2
     - skype
     - atom
     - simplescreenrecorder
