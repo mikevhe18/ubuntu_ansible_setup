@@ -12,11 +12,6 @@
   register: get_skype
   when: check_skype_file.stat.exists == false
 
-- name: Check Skype is installed
-  package_facts:
-    manager: "auto"
-
 - name: Install Skype
   apt:
     deb: /tmp/skypeforlinux-64.deb
-  when: skypeforlinux not in ansible_facts.packages
