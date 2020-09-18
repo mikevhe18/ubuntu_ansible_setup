@@ -1,10 +1,22 @@
 ---
+- name: Check Skype File deb
+  stat:
+    path: /tmp/skypeforlinux-64.deb
+  register: check_skype_file
+
 - name: Get Skype Deb
   become: yes
   get_url:
     url: https://go.skype.com/skypeforlinux-64.deb
     dest: /tmp/skypeforlinux-64.deb
+  register: get_skype
+  when: check_skype_file.stat.exists == false
+
+- name: Check Skype is installed
+  package_facts:
+    manager: "auto"
 
 - name: Install Skype
   apt:
     deb: /tmp/skypeforlinux-64.deb
+  when: skypeforlinux not in ansible_facts.packages
