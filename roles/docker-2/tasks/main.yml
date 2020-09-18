@@ -27,7 +27,7 @@
 - name: Configure Docker's upstream APT repository
   apt_repository:
     repo: "{{ docker__apt_repository }}"
-    update_cache: true
+    update_cache: no
 
 - name: Create Docker configuration directories
   file:
