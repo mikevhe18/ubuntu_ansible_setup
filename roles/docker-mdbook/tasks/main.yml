@@ -1,0 +1,13 @@
+---
+- name: Pull default Docker image for Mdbook
+  docker_image:
+    name: "{{ docker.default_container_image }}"
+    source: pull
+
+- name: Create default containers
+  docker_container:
+    name: "{{ docker.default_container_name }}{{ item }}"
+    image: "{{ docker.default_container_image }}"
+    command: "{{ docker.default_container_command }}"
+    state: present
+  with_sequence: count={{ docker.create_containers }}

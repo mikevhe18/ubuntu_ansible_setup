@@ -1,17 +1,10 @@
 ---
-
-- name: Skype GPG Key
-  apt_key:
-    url: https://repo.skype.com/data/SKYPE-GPG-KEY
-
-- name: Get Skype
-  apt_repository:
-    repo: deb [arch=amd64] https://repo.skype.com/deb stable main owner=root group=root mode=644
-    validate_certs: true
-    update_cache: no
-    state: present
-    filename: skypeforlinux
+- name: Get Skype Deb
+  become: yes
+  get_url:
+    url: https://go.skype.com/skypeforlinux-64.deb
+    dest: /tmp/skypeforlinux-64.deb
 
 - name: Install Skype
   apt:
-    name: skypeforlinux
+    deb: /tmp/skypeforlinux-64.deb
